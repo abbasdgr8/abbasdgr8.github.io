@@ -31,7 +31,7 @@
 
 <body>
 
-	<div id="top"><a href="https://abbasdgr8.github.io"> &lt; Back to Bio</a></div>
+	<div id="top"><a id="biolink1" href="https://abbasdgr8.github.io"> &lt; Back to Bio</a></div>
 	<div>
 		<div>
 			<header>
@@ -104,9 +104,17 @@
 		</div>
 	</div>
 
-	<br/><h6> For all purposes, the usage of the term *Java* here points to SunJDK, OracleJDK, or OpenJDK</h6>
+	<br/><h6> For all purposes the usage of the term *Java* here points to either SunJDK, OracleJDK, or OpenJDK</h6>
 
-	<div id="bottom"><a href="https://abbasdgr8.github.io"> &lt; Back to Bio</a></div>
+	<div id="bottom"><a id="biolink2" href="https://abbasdgr8.github.io"> &lt; Back to Bio</a></div>
+
+	<script>
+		const params = new URLSearchParams(window.location.search);
+		const source = params.get("source");
+		if (source === "bio") {
+			document.getElementById("biolink1").href = "javascript:window.close();";
+		}
+	</script>
 </body>
 
 </html>

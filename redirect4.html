@@ -153,21 +153,21 @@
         cell.innerText = plaintext;
 
         if (plaintext.includes("linkedin")) {
-          cell.innerHTML = `<a href=${plaintext}><img src="assets/css/images/LI-In-Bug.png" alt="" height=20 width=20 /></a>`;
+          cell.innerHTML = `<a href=${plaintext} target="_blank"><img src="assets/css/images/LI-In-Bug.png" alt="" height=20 width=20 /></a>`;
         }
 
         if (plaintext.includes("twitter")) {
-          cell.innerHTML = `<a href=${plaintext}><img src="assets/css/images/Twitter.png" alt="" height=20 width=20 /></a>`;
+          cell.innerHTML = `<a href=${plaintext} target="_blank"><img src="assets/css/images/Twitter.png" alt="" height=20 width=20 /></a>`;
         }
 
         if (plaintext.includes("github")) {
-          cell.innerHTML = `<a href=${plaintext}><img src="assets/css/images/github-mark.png" alt="" height=20 width=20 /></a>`;
+          cell.innerHTML = `<a href=${plaintext} target="_blank"><img src="assets/css/images/github-mark.png" alt="" height=20 width=20 /></a>`;
         }
 
         if (plaintext.includes("Request")) {
           const name = decrypt(row.cells[0].getAttribute("enc"));
           const email = `mailto:abbasdgr8st@gmail.com?subject=Requesting contact info for ${name}`;
-          cell.innerHTML = `<a href="${email}"> Request Contact Info </a>`;
+          cell.innerHTML = `<a href="${email}"><img src="assets/css/images/mail.png" alt="" height=20 width=20 /></a>`;
         }
 
       }

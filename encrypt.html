@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>AES Encrypt</title>
+</head>
+
+<body>
+
+  <div>
+    <form onsubmit="encrypt(event)">
+      <label for="phrase">Secret Passphrase:</label><br>
+      <input type="text" id="phrase" name="phrase"><br><br><br><br><br><br>
+      <label for="pText">Plain Text:</label><br>
+      <input type="text" id="pText" name="pText"><br><br><br>
+      <input type="submit" value="Encrypt !!"><br><br><br><br>
+      <label for="encAes">Encrypted AES:</label><br>
+      <input type="text" id="encAes">
+      <button onclick=copyToClipBoard(event)> Copy To Clipboard </button>
+    </form>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"
+    integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+  <script>
+
+    function encrypt(event) {
+      event.preventDefault();
+      var encryptedAES = CryptoJS.AES.encrypt(document.getElementById("pText").value, document.getElementById("phrase").value);
+      document.getElementById("encAes").value = encryptedAES;
+    }
+    
+    function copyToClipBoard(event) {
+      event.preventDefault();
+      var content = document.getElementById("encAes");
+      content.select();
+      document.execCommand("copy");
+    }
+  </script>
+</body>
+
+</html>

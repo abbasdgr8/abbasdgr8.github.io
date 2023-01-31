@@ -6,11 +6,16 @@
 </head>
 <style>
 
-  #title {
+#title {
     margin-bottom: 0em;
   }
 
   #address {
+    margin-top: 0.1em;
+    margin-bottom: 0em;
+  }
+
+  #contact {
     margin-top: 0.1em;
   }
 
@@ -86,6 +91,9 @@
     <h2 id="title" enc="U2FsdGVkX1/Bv+N0YspeiIaCkPgfj+dgGcmH8KF8hJzOuDeb/SzYsKJ3RKODGMIX"></h2>
     <h4 id="address"
       enc="U2FsdGVkX1/fyjW/UCO6I3IkB7X2NfvgzS/dpoTLl7IOYsoy0v6E4F2ohLnY9ffIBIZ5AGhrTQYR3Bx1oFebtmDlfDeRvLh7yD8lSv7Js3wRacNhdRqG9XRimt5KIX4OjaP2lAHgvESjeUr2QCFb/g==">
+    </h4>
+    <h4 id="contact"
+      enc="U2FsdGVkX1+P7ksBK9vaS0g7oPyYpWmY7xawYbi7dVlB5iuykLBnM01CDRDRODIyKz399JtUkHivrjjhKgNszwPSUk/LY9HzRzXOEGRpWkFAYiCqTM4fo6K/4JDyE3bLTnribHD7ePjHfxS11DZWT41+bBTnvp+dygW3adz2wx1kkYJE4fkULMilmjKTb43dzRROf92iqv4l170TBBAhehrgfa2gPAkJX4wHhf0J7gCBd0mqroEJVyl9VnhC8UCpiqC+3I1lFoBqxIuaFrdtOw==">
     </h4>
   </div>
 
@@ -217,6 +225,11 @@
     // Title Header
     const title = document.getElementById("title");
     title.innerText = decrypt(title.getAttribute("enc"));
+
+
+    // Contact Header
+    const contact = document.getElementById("contact");
+    contact.innerHTML = decrypt(contact.getAttribute("enc"));
 
 
     // Address Header

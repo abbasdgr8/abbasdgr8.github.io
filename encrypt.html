@@ -31,7 +31,7 @@
       var encryptedAES = CryptoJS.AES.encrypt(document.getElementById("pText").value, document.getElementById("phrase").value);
       document.getElementById("encAes").value = encryptedAES;
     }
-    
+
     function copyToClipBoard(event) {
       event.preventDefault();
       var content = document.getElementById("encAes");

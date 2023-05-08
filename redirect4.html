@@ -18,18 +18,6 @@
     margin-top: 0.1em;
   }
 
-  #brieftitle {
-    width: 10%;
-    float: left;
-    text-align: center;
-  }
-
-  #briefcontent {
-    width: 90%;
-    float: right;
-    text-align: left;
-  }
-
   .first {
     width: 100%;
     height: 10%;
@@ -74,6 +62,10 @@
     text-decoration: underline;
   }
 
+  .bold {
+    font-weight: bold;
+  }
+
   #listOfReferences {
     border-collapse: collapse;
     /* Collapse borders */
@@ -103,6 +95,11 @@
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
   }
+
+  #brieftable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+  }
 </style>
 
 <body>
@@ -117,12 +114,24 @@
     </h4>
   </div>
 
-  <div class="second">
-    <div id="brieftitle"><b>Company Brief:</b></div>
-    <div id="briefcontent"
-      enc="U2FsdGVkX19MOoz/sulJFJnGYM/URwEdk4aShMFbsqGS7nAP8rCbolp6ccQFsDcPRU4v3VNzl0sHaL5b4Ov8MsDzkbGlLMGyz7iunQy+YRI19HSULMdx7Nf6XlpX+aYjqhZqZ54fYRSbDYTmFmYD5TUXj0Zh7fMIW8s5Huas3KZCuYR8DgQuzLuRhqmcsUiaGWYjLr8vP5ly/W1LpTr75erdAQ245/Zd728Cx02/Dt8fMul+sbD6gHLouH4v1f07YK+C3DTYFBghcDHdEElaBCFeq/ZfSH7+8IZHJfREPHInGExzOGWws0+EVCMkmxlF/VQprRpW8DlqIfGENmn8iESHm1tSWVn72G44cEV7VN1zQopLTEo/3ZvH1TMgR6eG0dyXdjxmhqw8885TsAPBv0lwwC6nDCITfGwQ/QCKm25XZ0bC5l23iMNQ7Ziu7d0mrd+qkOSB/y5iARGh71a0T9uku3bgnnlrSZSWj7+6MrHyylKaZWgahll7C1DPJJNnPfn8nryamNIqgaLrHGD/QQELD7EK4ua5/MNBVgVvn5XVazdfe6K/Zd6phDrnKqWCcWFUz7X27wMDsdL1fxcbpL+5Edfy/tcbCmfkIq022M8=">
-    </div>
-  </div>
+  <table id="brieftable" class="second">
+    <tr>
+      <td enc="U2FsdGVkX1/vOYlyejXiz8JhFH2tH6TxXXhlqMKhLH0=" class="bold"></td>
+      <td enc="U2FsdGVkX1+5ZIRYkzgYoG1+3SNqlktncs4rg3lBJfryehTV22W/E45mYGWXMY7kCg3CoWo9BWwRJYdI5Dv0y7N6gf1WyciVYe0DJmpObFCUA/kJH6hrotfq79uM4JrKDYJ6bVOsIVdHVCp7MtIfjwmXHR833+5x9I06kNuyHS+mhiU5wuNkKiAS35SD4eU4ZW+GgvxNp/HlArgEd3kgVOPc87cJL35aQlS/TvPaRT5VfYMXGiDHzxVclD8b+/1wuTtqvNV9Km5uL+lx47H1ODzdiR7146HjoHg772e4U3YeXNeeGd2d1XGeiaaxqnlDOTG+U+sFyWWmRAIWPCfoaNuzTxsuZtbieZwsEP9qwSSqaSiOkdRGqep3pXmpRush+/5HuP4BMiOsbGwYlCNu/Z+gPdG38pueaiCnT6RPyUZ7TphlCW5R8dygKGdi57NNcr4qXBcTUKvoN571p1TipWx7+MyEx66/8XhXdICqy0PmIr3bqIDBk/qrfqrXUBxfC1L9h1BKwwYgSypKx4QGCL2JBtglZbWSTc+y7HwOdWmkPtlgHuEKKtf7afS8DB+CDnnmLTKgUTV2UslH8KzDv0lknNzNJOWplkCXNGfgo+Y="></td>
+    </tr>
+    <tr>
+      <td enc="U2FsdGVkX19uFIyItMPIk7hTt+yrq/90BmBdjquhlgXTCZgjOtBbQHvPdMn8Hng8" class="bold"></td>
+      <td enc="U2FsdGVkX1+IjR7MS8oEg5myHamM+y+XzSWiLbQgS/xrq0k12Q4G53fJOOlSl6xj"></td>
+    </tr>
+    <tr>
+      <td enc="U2FsdGVkX19xqvtl52Y7utvsXtH8vh2/RvoHgtl6dEQ=" class="bold"></td>
+      <td enc="U2FsdGVkX1+hP8x1jmj2vkybnU2RD+FP5SlY51cse+Q="></td>
+    </tr>
+    <tr>
+      <td enc="U2FsdGVkX18H2HBR9kiW/7TPTT09QRE76OyFoJbe2l4=" class="bold"></td>
+      <td enc="U2FsdGVkX18ME98WTN0b/zGMhLKDTx5DmccaSHQq3ig="></td>
+    </tr>
+  </table>
 
   <a href="https://www.fiverr.com/share/Zy2Goa" target="_blank">
     <div class="third">
@@ -269,15 +278,28 @@
     address.innerHTML = decrypt(address.getAttribute("enc"));
 
 
-    // Brief Div
-    const briefcontent = document.getElementById("briefcontent");
-    briefcontent.innerHTML = decrypt(briefcontent.getAttribute("enc"));
+    // Brief Table
+    const briefTable = document.getElementById("brieftable")
+
+    for (const row of briefTable.rows) {
+
+      for (const cell of row.cells) {
+
+        const plaintext = decrypt(cell.getAttribute("enc"));
+        cell.innerText = plaintext;
+
+        // if (cell.getAttribute("class") == 'bold') {
+          
+        // }
+
+      }
+    }
 
 
     // References Table
-    const table = document.querySelector("table");
+    const referencesTable = document.getElementById("listOfReferences")
 
-    for (const row of table.rows) {
+    for (const row of referencesTable.rows) {
 
       for (const cell of row.cells) {
 

